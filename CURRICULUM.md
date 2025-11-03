@@ -1560,3 +1560,20 @@ Upon completing this curriculum, you'll be qualified for:
 ---
 
 *Last Updated: 2025-10-18 | Version: 1.0.0*
+
+---
+
+## Requirement-to-Module Mapping
+
+| Job Requirement | Curriculum Coverage |
+| --- | --- |
+| Design and build internal ML platforms for data science and ML engineering teams | Module 001 - Platform Fundamentals<br>Module 003 - Multi-Tenancy Architecture<br>Project 01 - Self-Service Platform Blueprint<br>Project 06 - End-to-End ML Platform Capstone |
+| Develop self-service tools and APIs for model training, deployment, and monitoring | Module 002 - API Platforms<br>Module 005 - Workflow Orchestration<br>Project 01 - Self-Service Platform Blueprint |
+| Create and maintain SDKs and client libraries for ML infrastructure | Module 007 - Developer Experience & SDKs<br>Project 05 - Developer Portal and SDK |
+| Build feature stores and data versioning systems | Module 004 - Feature Store Architecture<br>Project 02 - Enterprise Feature Store |
+| Implement workflow orchestration systems for ML pipelines | Module 005 - Workflow Orchestration<br>Project 03 - Workflow Orchestration Spine |
+| Design and maintain experiment tracking and model registry systems | Module 006 - Model Registry & Release Management<br>Project 04 - Model Registry Automation |
+| Develop internal developer portals and documentation for ML platform | Module 007 - Developer Experience & SDKs<br>Project 05 - Developer Portal and SDK |
+| Optimize platform performance and reliability for diverse ML workloads | Module 008 - Observability & Usage Analytics<br>Project 06 - End-to-End ML Platform Capstone |
+| Create automation tools to reduce friction in ML development lifecycle | Module 005 - Workflow Orchestration<br>Module 007 - Developer Experience & SDKs<br>Project 03 - Workflow Orchestration Spine |
+| Maintain platform observability and usage analytics | Module 008 - Observability & Usage Analytics<br>Project 06 - End-to-End ML Platform Capstone |
