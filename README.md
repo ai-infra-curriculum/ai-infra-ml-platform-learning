@@ -612,7 +612,7 @@ Upon completion:
 ### Getting Help
 
 - **Documentation**: Check project READMEs and CURRICULUM.md first
-- **FAQ**: See [community/FAQ.md](./community/FAQ.md)
+- **Community**: See [community/](./community/) for FAQ-style notes (formal FAQ planned)
 - **GitHub Issues**: [Open an issue](https://github.com/ai-infra-curriculum/ai-infra-ml-platform-learning/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/ai-infra-curriculum/ai-infra-ml-platform-learning/discussions)
 
@@ -681,9 +681,9 @@ This curriculum is built on the collective knowledge of the ML platform engineer
 
 **Ready to begin your ML Platform Engineering journey?**
 
-Start with [CURRICULUM.md](./CURRICULUM.md) for the complete learning guide, then dive into [Module 01](./lessons/module-01-platform-fundamentals/).
+Start with [CURRICULUM.md](./CURRICULUM.md) for the complete learning guide, then dive into [Module 001](./lessons/mod-001-platform-fundamentals/).
 
-**Questions?** Check the [FAQ](./community/FAQ.md) or [open an issue](https://github.com/ai-infra-curriculum/ai-infra-ml-platform-learning/issues).
+**Questions?** [Open an issue](https://github.com/ai-infra-curriculum/ai-infra-ml-platform-learning/issues).
 
 **Contact**: [ai-infra-curriculum@joshua-ferguson.com](mailto:ai-infra-curriculum@joshua-ferguson.com)
 

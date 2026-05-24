@@ -310,11 +310,17 @@ If you're missing any prerequisites, complete these first:
 5. **Cloud**: Platform-specific training (AWS, GCP, Azure)
 6. **ML Basics**: [Introduction to Machine Learning with Python](https://www.oreilly.com/library/view/introduction-to-machine/9781449369880/)
 
-### Pre-Assessment Quiz
+### Pre-Assessment
 
-Test your readiness: [assessments/quizzes/prerequisite-quiz.py](./assessments/quizzes/prerequisite-quiz.py)
+A formal prerequisite quiz is planned. For now, confirm you can comfortably explain:
 
-**Passing Score**: 70% (if you score lower, review prerequisites)
+- Kubernetes namespaces, RBAC, NetworkPolicies
+- Container builds, registries, and security scanning
+- Basic SQL + at least one OLTP and one OLAP system
+- Linear regression / softmax / gradient descent
+- Python with type hints + at least one async framework
+
+If those feel uncertain, work through [ai-infra-engineer-learning](https://github.com/ai-infra-curriculum/ai-infra-engineer-learning) first.
 
 ---
 
