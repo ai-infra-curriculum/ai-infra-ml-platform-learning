@@ -554,11 +554,10 @@ This curriculum is designed for:
 - **Study groups** (team learning)
 
 **Instructor resources**:
-- Lecture slides (coming soon)
-- Assignment rubrics
-- Assessment answer keys (in solutions repo)
-- Additional exercises
-- Guest lecture suggestions
+- Lecture notes per module (under `lessons/<module>/lecture-notes/`)
+- Assessment answer keys (in the [solutions repo](https://github.com/ai-infra-curriculum/ai-infra-ml-platform-solutions))
+- Module exercises ready to assign as homework
+- Lecture slides are not maintained here today — file a Discussion if you want to contribute a deck
 
 ### For Hiring Managers
 
@@ -612,16 +611,14 @@ Upon completion:
 ### Getting Help
 
 - **Documentation**: Check project READMEs and CURRICULUM.md first
-- **FAQ**: See [community/FAQ.md](./community/FAQ.md)
+- **Community**: See [community/](./community/) for FAQ-style notes (formal FAQ planned)
 - **GitHub Issues**: [Open an issue](https://github.com/ai-infra-curriculum/ai-infra-ml-platform-learning/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/ai-infra-curriculum/ai-infra-ml-platform-learning/discussions)
 
 ### Community Channels
 
-- **Discord**: [Join our server](https://discord.gg/ai-infra-curriculum) (coming soon)
-- **Slack**: [Join workspace](https://ai-infra-curriculum.slack.com) (coming soon)
-- **Office Hours**: Weekly live Q&A sessions (schedule TBD)
-- **Study Groups**: Find or start a study group
+- **Primary channels**: [GitHub Discussions](https://github.com/ai-infra-curriculum/ai-infra-ml-platform-learning/discussions) and Issues are the supported community surfaces today.
+- **Dedicated chat / office hours**: Not currently scheduled. Open a Discussion if you'd like to coordinate a study group or office-hours slot with other learners.
 
 ### Stay Updated
 
@@ -681,9 +678,9 @@ This curriculum is built on the collective knowledge of the ML platform engineer
 
 **Ready to begin your ML Platform Engineering journey?**
 
-Start with [CURRICULUM.md](./CURRICULUM.md) for the complete learning guide, then dive into [Module 01](./lessons/module-01-platform-fundamentals/).
+Start with [CURRICULUM.md](./CURRICULUM.md) for the complete learning guide, then dive into [Module 001](./lessons/mod-001-platform-fundamentals/).
 
-**Questions?** Check the [FAQ](./community/FAQ.md) or [open an issue](https://github.com/ai-infra-curriculum/ai-infra-ml-platform-learning/issues).
+**Questions?** [Open an issue](https://github.com/ai-infra-curriculum/ai-infra-ml-platform-learning/issues).
 
 **Contact**: [ai-infra-curriculum@joshua-ferguson.com](mailto:ai-infra-curriculum@joshua-ferguson.com)
 
