@@ -624,8 +624,7 @@ Upon completion:
 
 - **Star this repo** for updates
 - **Watch releases** for new content
-- **Follow on Twitter**: [@ai_infra_learn](https://twitter.com/ai_infra_learn) (coming soon)
-- **Newsletter**: Monthly updates and tips (coming soon)
+- **GitHub Discussions** is the active channel for announcements and updates.
 
 ## Contributing
 
