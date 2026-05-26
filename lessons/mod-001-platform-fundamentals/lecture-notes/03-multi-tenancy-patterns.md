@@ -795,4 +795,4 @@ Multi-tenancy is the heaviest topic in Module 01 because it's where most ML plat
 
 In the next chapter, we shift from the *isolation* concerns of multi-tenancy to the *interface* concerns of API design: versioning, contracts, deprecation, and the principles that make platform APIs worth depending on.
 
-<!-- needs-research: the exact Kueue fair-share semantics (cohort, ClusterQueue, LocalQueue, weights) are described accurately at a high level above but should be cross-checked against the current Kueue docs before quoting in Module 04. -->
+> **Source note.** The Kueue concepts mentioned in this chapter (ClusterQueue, LocalQueue, cohorts, ResourceFlavor, fair-share weights) are described at a deliberately high level here. For the canonical mechanics — including `BorrowingLimit`, preemption policies, and how borrowing across a cohort actually works — consult the [Kueue concepts docs](https://kueue.sigs.k8s.io/docs/concepts/) before reusing this material in production design. Verified at high level against Kueue v0.9 docs, 2026-05.

@@ -554,11 +554,10 @@ This curriculum is designed for:
 - **Study groups** (team learning)
 
 **Instructor resources**:
-- Lecture slides (coming soon)
-- Assignment rubrics
-- Assessment answer keys (in solutions repo)
-- Additional exercises
-- Guest lecture suggestions
+- Lecture notes per module (under `lessons/<module>/lecture-notes/`)
+- Assessment answer keys (in the [solutions repo](https://github.com/ai-infra-curriculum/ai-infra-ml-platform-solutions))
+- Module exercises ready to assign as homework
+- Lecture slides are not maintained here today — file a Discussion if you want to contribute a deck
 
 ### For Hiring Managers
 
@@ -618,10 +617,8 @@ Upon completion:
 
 ### Community Channels
 
-- **Discord**: [Join our server](https://discord.gg/ai-infra-curriculum) (coming soon)
-- **Slack**: [Join workspace](https://ai-infra-curriculum.slack.com) (coming soon)
-- **Office Hours**: Weekly live Q&A sessions (schedule TBD)
-- **Study Groups**: Find or start a study group
+- **Primary channels**: [GitHub Discussions](https://github.com/ai-infra-curriculum/ai-infra-ml-platform-learning/discussions) and Issues are the supported community surfaces today.
+- **Dedicated chat / office hours**: Not currently scheduled. Open a Discussion if you'd like to coordinate a study group or office-hours slot with other learners.
 
 ### Stay Updated
 

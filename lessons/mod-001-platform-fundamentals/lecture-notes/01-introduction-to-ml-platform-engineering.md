@@ -534,4 +534,4 @@ For each item, we recommend a "what to look for when reading" lens.
 
 In the next chapter, we shift from "what is a platform" to "how does a platform engineer *think*" — abstraction design, self-service vs full-service, developer experience, and adoption strategy.
 
-<!-- needs-research: confirm the exact line in the Michelangelo blog post that lists the "manage data → train → evaluate → deploy → predict → monitor" stages; current phrasing is paraphrased from memory but should be verified against the live post. -->
+> **Source note.** The six Michelangelo stages enumerated above (Manage data, Train models, Evaluate models, Deploy models, Make predictions, Monitor predictions) match the workflow described in Uber's 2017 ["Meet Michelangelo"](https://www.uber.com/blog/michelangelo-machine-learning-platform/) post. Verified 2026-05.

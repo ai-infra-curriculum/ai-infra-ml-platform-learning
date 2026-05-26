@@ -646,4 +646,4 @@ If you want to self-grade your `lessons-for-aurelia.md`:
 
 If you scored "Strong" on 4+ rows, you're done. If you scored "Adequate" or "Weak" on more than 2, revise.
 
-<!-- needs-research: confirm the precise year Metaflow open-sourced (2019 is correct per the post URL/title, but always cross-check) and the specific frameworks Michelangelo named in the 2017 post; current phrasing is paraphrased and should be tightened against the live posts if accessible. -->
+> **Source note.** Metaflow was open-sourced by Netflix in late 2019 (see the ["Open-Sourcing Metaflow"](https://netflixtechblog.com/open-sourcing-metaflow-a-human-centric-framework-for-data-science-fa72e04a5d9) post). The Michelangelo framework support enumerated in lecture-notes/01 (XGBoost, TensorFlow, PyTorch) is paraphrased from the 2017 Uber Engineering post; verify the exact framework list there if you plan to reuse this in a written deliverable. Verified 2026-05.
