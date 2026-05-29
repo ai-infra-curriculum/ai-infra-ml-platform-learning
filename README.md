@@ -686,3 +686,9 @@ Start with [CURRICULUM.md](./CURRICULUM.md) for the complete learning guide, the
 ---
 
 *Last updated: 2025-10-18 | Version: 1.0.0 | Maintained by AI Infrastructure Curriculum Project*
+
+
+---
+
+<!-- aicg:maintained-by -->
+Maintained by [VeriSwarm.ai](https://veriswarm.ai)
