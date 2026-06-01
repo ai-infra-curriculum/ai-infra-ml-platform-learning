@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "role_id": "ml-platform",
+  "month": "2026-06",
+  "rationale": "Across 32 ML/AI Platform Engineer postings observed between 2026-03-01 and 2026-06-01, the most material shift since the prior cycle is the GenAI platform mandate now landing at L30 ML Platform roles (not just at AI labs). Three previously-research-only surfaces are now explicit platform-team deliverables in postings at Reddit, Anthropic, DoorDash, Mixpanel, Glean, Fireworks, Together AI, OpenAI, Stripe, Red Hat, Samsara, Roblox, and Match Group: (1) LLM serving engines (vLLM, SGLang, TensorRT-LLM, KServe/LLM-D) integrated as platform-managed runtimes with autoscaling and capacity planning; (2) LLM Gateways with model routing, token/rate limits, intelligent failover, and prompt/version management as a platform feature; (3) Evaluation harnesses (including LLM-as-judge) and agent observability as platform-owned surfaces with SDK integration into the shipping process. Current Modules 01-09 and Projects 01-05 fully cover the classical ML platform surfaces (feature stores, registries, workflow orchestration, multi-tenancy, DX, SDKs) \u2014 postings still cite those, but they are no longer the differentiator. The three proposed modules and one project address the gaps that are now table stakes. Ray-on-Kubernetes is a smaller, exercise-level gap; everything else with thin evidence (RAG infra, research data platform, edge ML) stays on the watch list per the contract.",
+  "modules": [
+    {
+      "id": "mod-010-llm-serving-platform",
+      "title": "LLM Serving as a Platform Runtime",
+      "description": "Treat vLLM, SGLang, TensorRT-LLM, and KServe (with LLM-D) as first-class platform-managed serving runtimes rather than tools the inference team installs. Covers what an ML Platform Engineer owns: choosing serving engines per workload, integrating them under a unified deployment abstraction, capacity planning under continuous-batching/KV-cache constraints, autoscaling LLM replicas, multi-region/multi-cloud routing, and exposing all of this via the platform's existing model registry and SDK. Kernel-level optimization is explicitly OUT of scope \u2014 that belongs to the Performance Engineer peer role.",
+      "exercises": [
+        {
+          "slug": "exercise-01-deploy-vllm-on-k8s",
+          "title": "Deploy vLLM as a multi-tenant serving runtime",
+          "summary": "Stand up vLLM behind a KServe InferenceService with tenant-scoped quotas; expose via the platform's model deployment API."
+        },
+        {
+          "slug": "exercise-02-capacity-planning-kv-cache",
+          "title": "Capacity planning under KV-cache constraints",
+          "summary": "Given a workload mix (prompt-length distribution, concurrency target, p99 latency budget), size GPU pools and configure continuous batching."
+        },
+        {
+          "slug": "exercise-03-multi-engine-abstraction",
+          "title": "Unified serving abstraction across engines",
+          "summary": "Wrap vLLM, SGLang, and TensorRT-LLM behind a single platform deployment CRD that picks the engine based on model + workload class."
+        }
+      ],
+      "rationale": "Maps to `req-llm-serving-platform`. Current Module 06 covers classical model registries and deployments but says nothing about continuous batching, prefill/decode, KV-cache awareness, or how to expose LLM-specific serving runtimes through the platform's deployment surface. Ten postings explicitly require this knowledge AT the ML Platform Engineer level (not at Performance Engineer level).",
+      "evidence": [
+        {
+          "employer": "Red Hat",
+          "title": "Principal ML Engineer, Distributed vLLM Inference",
+          "url": "https://redhat.wd5.myworkdayjobs.com/en-US/Jobs/job/Principal-Machine-Learning-Engineer--Distributed-vLLM-Inference_R-050962-1",
+          "date_observed": "2026-06-01",
+          "quote": "Tackle challenges in scalable inference systems and Kubernetes-native deployments via vLLM and LLM-D."
+        },
+        {
+          "employer": "Together AI",
+          "title": "Senior ML Engineer, Voice AI",
+          "url": "https://job-boards.greenhouse.io/togetherai/jobs/5088817007",
+          "date_observed": "2026-06-01",
+          "quote": "Hands-on LLM serving engines: vLLM, SGLang, TensorRT-LLM."
+        },
+        {
+          "employer": "Fireworks AI",
+          "title": "Member of Technical Staff, Cloud Infrastructure",
+          "url": "https://job-boards.greenhouse.io/fireworksai/jobs/4005894009",
+          "date_observed": "2026-06-01",
+          "quote": "Spearhead the creation of one of the world's first virtual clouds, seamlessly serving AI workloads across the globe."
+        },
+        {
+          "employer": "Anthropic",
+          "title": "Software Engineer, Cloud Inference",
+          "url": "https://job-boards.greenhouse.io/anthropic/jobs/5107466008",
+          "date_observed": "2026-06-01",
+          "quote": "End-to-end product of Claude on each cloud platform, from API integration and intelligent request routing to inference execution."
+        },
+        {
+          "employer": "DoorDash",
+          "title": "Principal Engineer, AI/ML Platform",
+          "url": "https://careersatdoordash.com/jobs/principal-engineer-ai-ml-platform/7669280/",
+          "date_observed": "2026-06-01",
+          "quote": "GenAI/LLM platform design and rollout."
+        },
+        {
+          "employer": "Fireworks AI",
+          "title": "Software Engineer, AI Infrastructure",
+          "url": "https://job-boards.greenhouse.io/fireworksai/jobs/4056271009",
+          "date_observed": "2026-06-01",
+          "quote": "Basic LLM knowledge: context length, prefill, KV cache."
+        },
+        {
+          "employer": "OpenAI",
+          "title": "Platform ML Engineering Manager, Inference",
+          "url": "https://jobs.ashbyhq.com/openai/60db4c1d-0285-4fb0-9453-4a3ef50102b0",
+          "date_observed": "2026-06-01",
+          "quote": "Lead critical work on our shared internal inference stack."
+        },
+        {
+          "employer": "Roblox",
+          "title": "Senior ML Engineer, AI Platform",
+          "url": "https://careers.roblox.com/jobs/7403998",
+          "date_observed": "2026-06-01",
+          "quote": "The AI Platform team supports hundreds of ML use cases and billions of inferences daily."
+        },
+        {
+          "employer": "Samsara",
+          "title": "Staff ML Engineer - ML Infrastructure",
+          "url": "https://job-boards.greenhouse.io/samsara/jobs/7721193",
+          "date_observed": "2026-06-01",
+          "quote": "Computer vision and/or LLM production systems."
+        },
+        {
+          "employer": "Stripe",
+          "title": "SWE, ML Infrastructure",
+          "url": "https://stripe.com/jobs/listing/software-engineer-machine-learning-infrastructure/7528260",
+          "date_observed": "2026-06-01",
+          "quote": "Build scalable, reliable services for notebooks, ML model training, experimentation, serving, and LLM applications."
+        }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "module_id": "mod-005-workflow-orchestration",
+      "exercise": {
+        "slug": "exercise-05-kuberay-self-service",
+        "title": "KubeRay as a self-service compute primitive",
+        "summary": "Stand up KubeRay on the platform cluster; expose Ray Jobs/Serve to platform users via the existing workflow SDK; cover RayCluster lifecycle, head/worker autoscaling, and integration with the platform's multi-tenancy primitives."
+      },
+      "evidence": [
+        {
+          "employer": "Reddit",
+          "title": "Senior ML Engineer, ML Training Platform",
+          "url": "https://job-boards.greenhouse.io/reddit/jobs/7074776",
+          "date_observed": "2026-06-01",
+          "quote": "Distributed training (Ray, Kubernetes)."
+        },
+        {
+          "employer": "Samsara",
+          "title": "Staff ML Engineer - ML Infrastructure",
+          "url": "https://job-boards.greenhouse.io/samsara/jobs/7721193",
+          "date_observed": "2026-06-01",
+          "quote": "Distributed computing frameworks (Ray and/or Spark)."
+        },
+        {
+          "employer": "Afresh",
+          "title": "Staff Software Engineer, ML Platform",
+          "url": "https://job-boards.greenhouse.io/afresh/jobs/5706905004",
+          "date_observed": "2026-06-01",
+          "quote": "Architect high-throughput distributed inference (Spark, Dask, Ray)."
+        }
+      ]
+    }
+  ],
+  "projects": []
+}
