@@ -1,5 +1,9 @@
 # ML Platform Engineer - Learning Repository
 
+<!-- aicg:site-banner -->
+> 🎓 Part of the **[AI Infrastructure Curriculum](https://ai-infra-curriculum.github.io/)** — a free, open-source ladder of role-based AI-infrastructure programs. [Explore the ladder](https://ai-infra-curriculum.github.io/) · [Join the first live cohort](https://ai-infra-curriculum.github.io/junior.html)
+<!-- /aicg:site-banner -->
+
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Python](https://img.shields.io/badge/python-3.11+-blue.svg)
 ![Kubernetes](https://img.shields.io/badge/kubernetes-1.28+-blue.svg)
@@ -686,7 +690,6 @@ Start with [CURRICULUM.md](./CURRICULUM.md) for the complete learning guide, the
 ---
 
 *Last updated: 2025-10-18 | Version: 1.0.0*
-
 
 ---
 
