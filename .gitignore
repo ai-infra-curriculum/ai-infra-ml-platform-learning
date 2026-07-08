@@ -114,3 +114,4 @@ dump.rdb
 
 # Docker
 .dockerignore
+.aicg/
