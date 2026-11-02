@@ -1,9 +1,9 @@
 # Job Requirements — AI/ML Platform Engineer
 
 > **Role**: AI/ML Platform Engineer (Level 30)
-> **Research window**: 2026-04-05 → 2026-07-04 (last 90 days)
-> **Postings analyzed**: 34 distinct postings across 24 employers
-> **Last refreshed**: 2026-07-04
+> **Research window**: 2026-07-06 → 2026-10-04 (last 90 days)
+> **Postings analyzed**: 59 distinct postings across 36 employers (1 new posting added this cycle; 2026-10 was a mid-cycle refresh one month after the comprehensive 2026-09 scan)
+> **Last refreshed**: 2026-10-04
 
 This document captures the recurring requirements observed in current job postings for the **AI/ML Platform Engineer** role, maps them to learning coverage in this repository, and links out to lower-level repositories when a requirement is genuinely owned elsewhere in the role hierarchy.
 
@@ -15,9 +15,13 @@ For raw, machine-readable findings (postings, requirements, evidence, coverage p
 
 ## Summary of the 2026 Shift
 
-**2026-07 cycle note**: A market re-check for the 2026-04-05 → 2026-07-04 window found **no material shift** since the 2026-06-01 refresh. The three gaps identified in June remain the standing story; two new postings (NVIDIA Sr ML Platform Engineer; Multiverse Computing Sr MLOps) reinforce the same picture. Two adjacent signals — MCP / A2A protocols and named agent-framework fluency (LangGraph, CrewAI, AutoGen, Pydantic AI) — are firming up in *Agentic AI Engineer* postings but do not yet clear the ≥30% frequency bar at L30 ML Platform titles. Added to the [Watch List](#watch-list-re-evaluate-next-cycle). See [`.aicg/curriculum-plan-delta.json`](./.aicg/curriculum-plan-delta.json) for this cycle's empty delta and rationale.
+**2026-10 mid-cycle refresh note**: A targeted spot-check of the 2026-09-05 → 2026-10-04 window (one month after the comprehensive 2026-09 scan) surfaces no material shift. The three standing GenAI-platform gaps (LLM serving runtime integration, LLM Gateway & routing, eval harnesses + agent observability + absorbed MCP/named-agent-framework scope) remain the correct outstanding story and the standing 2026-06 proposal set (`mod-010`, `mod-011`, `mod-012`, `project-06`, `mod-005` KubeRay exercise) remains the correct fix. One new in-window posting verified this cycle — **Faire Sr Staff ML Platform Engineer** (p059) — reinforces classical ML Platform coverage (Databricks lakehouse, Spark, MLflow, Kubernetes, IaC) with LLM workflow integration mentioned but not as a dedicated LLM-serving/gateway surface. External posting-listings (EXL "Hybrid AI Platform Engineer - LLM Gateway & Observability", ALTCloud "AI Platform Engineer – MCP / Model Gateway / GenAI", Synopsys "AI Platform Engineer (MCP, Python/GO, LLM)") corroborate the standing gateway + MCP picture at non-headline-brand employers but add no new signal class. A **fine-tuning platform / LoRA-adapter-serving** sub-trend (Predibase/LoRAX, Fireworks, Together AI) is firming in external discourse but at strict generalist L30 ML-Platform titles still folds into existing serving/registry surfaces (Stripe p046 names LLM fine-tuning as one of many platform surfaces) — not clearing the ≥30% bar for a standalone module; absorbed by `mod-010` scope when scaffolded. **Empty delta this cycle.** See [`.aicg/curriculum-plan-delta.json`](./.aicg/curriculum-plan-delta.json).
 
-Compared to the prior cycle, the AI/ML Platform Engineer role has materially shifted toward **GenAI platform ownership**. Across 34 postings, three patterns are now genuinely table-stakes for this role and were largely absent a year ago:
+**2026-09 cycle note**: A fresh 90-day scan (2026-06-06 → 2026-09-04) confirms the three standing GenAI-platform gaps identified in the 2026-06 cycle — LLM serving runtime integration (vLLM/SGLang/TensorRT-LLM/KServe), LLM Gateway & routing, and eval harnesses + agent observability — remain the correct outstanding proposals. 24 new postings were added this cycle across DoorDash, Anthropic (3), OpenAI, Together AI (3), Groq, Reddit (2), Stripe, Samsara (2), Netflix, Scale AI (2), Airbnb, Robinhood, Instacart, Cartesia, PAR, OnePay, and Kaseya. The one **material change from 2026-07** is that the two prior-cycle Watch List items — **MCP / A2A protocols** and **named agent-framework fluency (LangGraph, LangChain, CrewAI, AutoGen)** — have migrated from Agentic-AI titles into L30 ML/AI Platform titles: 5+ platform-titled postings each in-window cite them as headline requirements (DoorDash GenAI ML Infra, Anthropic Platform Connectivity, Samsara AI Platform, PAR, OnePay, Kaseya). Per the 2026-07 forward-guidance (*"if MCP migrates from Agentic-AI titles into ML-Platform titles by next cycle, expect it to land under the existing mod-012 proposal rather than as its own module"*), **both signals are absorbed by the standing proposed `mod-012-eval-agent-observability` module — as within-module exercises, not new modules.** Empty delta this cycle. Voice/streaming inference infra firmed at voice-specialized employers (Together AI, Cartesia, Deepgram) but remains under 10% at generalist L30 titles — stays on Watch List. RAG-as-platform saw its first firmer in-window platform-titled hits (Reddit Indexing & Retrieval Platform, Scale AI MLE Platform) but is still under the ≥30% bar at generalist titles — stays on Watch List. See [`.aicg/curriculum-plan-delta.json`](./.aicg/curriculum-plan-delta.json) for the empty delta and full rationale.
+
+**2026-07 cycle note (retained for continuity)**: A market re-check for the 2026-04-05 → 2026-07-04 window found no material shift since the 2026-06-01 refresh. The three gaps identified in June remained the standing story; two new postings (NVIDIA Sr ML Platform Engineer; Multiverse Computing Sr MLOps) reinforced the same picture. MCP and named-agent-framework signals were added to the Watch List; both have now firmed up in the 2026-09 cycle (see above).
+
+Compared to the prior cycle, the AI/ML Platform Engineer role has materially shifted toward **GenAI platform ownership**. Across 58 postings analyzed to date, three patterns are now genuinely table-stakes for this role and were largely absent a year ago:
 
 1. **LLM serving as a first-class platform runtime** — vLLM, SGLang, TensorRT-LLM, and KServe are no longer "the inference team's tools"; ML Platform Engineers are expected to integrate them as platform-managed serving runtimes with continuous batching, KV-cache awareness, and capacity planning (Reddit, Anthropic, Fireworks, DoorDash, Red Hat, Stripe, Roblox, Together AI, OpenAI, Samsara).
 2. **LLM Gateway / model routing as a platform feature** — token/rate limits, intelligent failover across providers, prompt/version management, and cost attribution show up as explicit responsibilities (Reddit Sr Staff GenAI Platform, Anthropic Cloud Inference, DoorDash Principal, Mixpanel, Stripe, Match Group).
@@ -45,11 +49,15 @@ The classic ML platform surfaces (feature stores, model registries, workflow orc
 | `req-inference-engine-optimization` | Performance | CUDA, KV cache, attention internals | AI Infra Performance (L35) | ↳ Covered at peer level |
 | `req-multi-cloud-capacity` | Operations | Multi-region serving strategy | AI Infra Architect (L45) | ↳ Covered at higher level |
 | `req-incident-response` | Operations | On-call, runbooks, error budgets | AI Infra Engineer (L20) | ↳ Covered at lower level |
-| `req-llm-serving-platform` | GenAI Platform | vLLM/SGLang/TensorRT-LLM/KServe as platform runtime | This repo (L30) | ⚠️ **Gap** |
-| `req-llm-gateway` | GenAI Platform | LLM gateway, routing, token limits, prompt mgmt | This repo (L30) | ⚠️ **Gap** |
-| `req-eval-harness-agent-observability` | GenAI Platform | Eval harnesses, LLM-as-judge, agent observability | This repo (L30) | ⚠️ **Gap** |
+| `req-llm-serving-platform` | GenAI Platform | vLLM/SGLang/TensorRT-LLM/KServe as platform runtime | This repo (L30) | ⚠️ **Gap** (mod-010 proposed) |
+| `req-llm-gateway` | GenAI Platform | LLM gateway, routing, token limits, prompt mgmt | This repo (L30) | ⚠️ **Gap** (mod-011 proposed) |
+| `req-eval-harness-agent-observability` | GenAI Platform | Eval harnesses, LLM-as-judge, agent observability, **MCP tracing, agent-framework support** | This repo (L30) | ⚠️ **Gap** (mod-012 proposed; scope expanded) |
+| `req-mcp-a2a-protocols` | GenAI Platform | MCP proxy, tool interoperability, A2A protocols | This repo (L30) | ⚠️ **Gap** — absorbed by mod-012 |
+| `req-named-agent-frameworks` | GenAI Platform | LangGraph/LangChain/CrewAI/AutoGen as supported runtimes | This repo (L30) | ⚠️ **Gap** — absorbed by mod-012 |
 | `req-ray-on-kubernetes` | Orchestration | KubeRay self-service for users | This repo (L30) | ⚠️ Gap (exercise-level) |
-| `req-rag-vector-platform` | GenAI Platform | RAG infra, vector DB, retrieval service | This repo (L30) | 🔭 Monitoring (evidence thin) |
+| `req-rag-vector-platform` | GenAI Platform | RAG infra, vector DB, retrieval service | This repo (L30) | 🔭 Monitoring (evidence still thin at generalist titles) |
+| `req-voice-streaming-platform` | GenAI Platform | Streaming voice/audio inference infra, WebSocket APIs | This repo (L30) | 🔭 Monitoring (concentrated at voice-native cos) |
+| `req-edge-ondevice-platform` | GenAI Platform | Edge model packaging, edge↔cloud feedback | This repo (L30) | 🔭 Monitoring (single-employer concentration) |
 | `req-research-data-platform` | Data Platform | Research-run lineage and analytics | This repo (L30) | 🔄 Partially covered |
 
 ---
@@ -65,6 +73,7 @@ Multi-tenant platform design, paved-road abstractions, build-vs-buy decisions, A
 - **Roblox** — *"The AI Platform team supports hundreds of ML use cases and billions of inferences daily."* ([posting](https://careers.roblox.com/jobs/7403998))
 - **DoorDash Principal** — *"Define the technical backbone that powers all machine learning and generative AI workloads across DoorDash."* ([posting](https://careersatdoordash.com/jobs/principal-engineer-ai-ml-platform/7669280/))
 - **Samsara** — *"Design, build, and operate Samsara's end-to-end ML platform (training, experimentation, batch/online inference, edge)."* ([posting](https://job-boards.greenhouse.io/samsara/jobs/7721193))
+- **Faire Sr Staff ML Platform Engineer** *(new 2026-10)* — *"Own the technical vision and evolution of the ML platform; set standards and influence org-wide architecture; lead complex cross-functional initiatives."* ([posting](https://job-boards.greenhouse.io/faire/jobs/8731172002))
 
 **Coverage**: [Module 01 — Platform Fundamentals](./lessons/mod-001-platform-fundamentals/) and [Project 01 — Platform Core](./projects/project-01-platform-core/) cover this fully.
 
@@ -157,17 +166,23 @@ This is the largest 2026 shift. LLM serving engines (vLLM, SGLang, TensorRT-LLM,
 
 > **Ownership boundary**: kernel-level CUDA optimization, attention math, and inference engine internals belong to the [AI Infrastructure Performance Engineer](https://github.com/ai-infra-curriculum/ai-infra-performance-learning) (Level 35). The ML Platform Engineer integrates these engines *as platform consumers* — choosing serving runtimes, autoscaling them, exposing them via SDK abstractions, and managing capacity. The new module proposal sticks to that boundary.
 
-**Evidence (11 postings)**:
+**Evidence (17 postings including 6 new in 2026-09 window)**:
 - **Red Hat** — *"Tackle challenges in scalable inference systems and Kubernetes-native deployments via vLLM and LLM-D."* ([posting](https://redhat.wd5.myworkdayjobs.com/en-US/Jobs/job/Principal-Machine-Learning-Engineer--Distributed-vLLM-Inference_R-050962-1))
-- **Multiverse Computing** — *"Lead the deployment of LLMs using vLLM, TensorRT-LLM, or SGLang. You will implement and tune cutting-edge techniques — including PagedAttention, continuous batching, and advanced quantization."* ([posting](https://relocate.me/spain/san-sebastian/multiverse-computing/senior-mlops-engineer-training-inference-optimization-10243)) — *added 2026-07-04*
-- **Together AI** — *"Hands-on LLM serving engines: vLLM, SGLang, TensorRT-LLM."* ([posting](https://job-boards.greenhouse.io/togetherai/jobs/5088817007))
+- **Together AI Sr Backend Eng, Inference Platform** *(new 2026-09)* — *"Open source inference ecosystem: SGLang, vLLM, or NVIDIA Dynamo (highly valuable)."* ([posting](https://job-boards.greenhouse.io/togetherai/jobs/4835763007))
+- **Together AI Staff SWE, Inference/Compute Infra** *(new 2026-09)* — manifest-driven inference API via Kubernetes controllers ([posting](https://job-boards.greenhouse.io/togetherai/jobs/5186628007))
+- **Groq Sr Staff SWE, HPI System** *(new 2026-09)* — *"FlashAttention, PagedAttention, continuous batching, speculative decoding, KV cache, prefill/decode scheduling."* ([posting](https://job-boards.greenhouse.io/groq/jobs/6010437003))
+- **Anthropic Perf Eng, Inference Systems** *(new 2026-09)* — inference-fleet performance engineering as a platform surface ([posting](https://job-boards.greenhouse.io/anthropic/jobs/5224564008))
+- **Cartesia SWE, Platform** *(new 2026-09)* — *"Design and build low latency, scalable, and reliable model inference and serving stack for our cutting edge SSM foundation models."* ([posting](https://jobs.ashbyhq.com/cartesia/7628169d-3703-4b82-a1d0-ed3124790643))
+- **Stripe Staff SWE, ML Platform** *(new 2026-09)* — *"low-latency model inference…LLM fine-tuning…LLM and agent orchestration."* ([posting](https://stripe.com/careers/listing/staff-software-engineer-machine-learning-platform/7939868))
+- **Multiverse Computing** — *"Lead the deployment of LLMs using vLLM, TensorRT-LLM, or SGLang. You will implement and tune cutting-edge techniques — including PagedAttention, continuous batching, and advanced quantization."* ([posting](https://relocate.me/spain/san-sebastian/multiverse-computing/senior-mlops-engineer-training-inference-optimization-10243))
+- **Together AI (2026-06 Voice AI role)** — *"Hands-on LLM serving engines: vLLM, SGLang, TensorRT-LLM."* ([posting](https://job-boards.greenhouse.io/togetherai/jobs/5088817007))
 - **Fireworks AI Cloud Infra** — *"Spearhead the creation of one of the world's first virtual clouds, seamlessly serving AI workloads across the globe."* ([posting](https://job-boards.greenhouse.io/fireworksai/jobs/4005894009))
 - **Anthropic Cloud Inference** — *"End-to-end product of Claude on each cloud platform, from API integration and intelligent request routing to inference execution."* ([posting](https://job-boards.greenhouse.io/anthropic/jobs/5107466008))
 - **DoorDash Principal** — *"GenAI/LLM platform design and rollout."* ([posting](https://careersatdoordash.com/jobs/principal-engineer-ai-ml-platform/7669280/))
-- **OpenAI** — *"Lead shared internal inference stack work."* ([posting](https://jobs.ashbyhq.com/openai/60db4c1d-0285-4fb0-9453-4a3ef50102b0))
+- **OpenAI Platform ML Eng Mgr, Inference** — *"Lead shared internal inference stack work."* ([posting](https://jobs.ashbyhq.com/openai/60db4c1d-0285-4fb0-9453-4a3ef50102b0))
 - **Roblox** — *"Distributed inference systems for billions of inferences daily."* ([posting](https://careers.roblox.com/jobs/7403998))
 - **Samsara** — *"Computer vision and/or LLM production systems."* ([posting](https://job-boards.greenhouse.io/samsara/jobs/7721193))
-- **Stripe** — *"Build scalable, reliable services for notebooks, ML model training, experimentation, serving, and LLM applications."* ([posting](https://stripe.com/jobs/listing/software-engineer-machine-learning-infrastructure/7528260))
+- **Stripe (2026-06 posting)** — *"Build scalable, reliable services for notebooks, ML model training, experimentation, serving, and LLM applications."* ([posting](https://stripe.com/jobs/listing/software-engineer-machine-learning-infrastructure/7528260))
 - **Fireworks AI Infra** — *"Basic LLM knowledge: context length, prefill, KV cache."* ([posting](https://job-boards.greenhouse.io/fireworksai/jobs/4056271009))
 
 **Coverage**: ⚠️ **Gap** — proposed `mod-010-llm-serving-platform` and a project addition in [`.aicg/curriculum-plan-delta.json`](./.aicg/curriculum-plan-delta.json).
@@ -187,14 +202,19 @@ This is the largest 2026 shift. LLM serving engines (vLLM, SGLang, TensorRT-LLM,
 
 LLM Gateways are showing up as discrete platform deliverables: a routing layer in front of one or many model providers (internal serving fleets + external APIs) that handles token/rate limits, intelligent failover, prompt/version management, response caching, and cost attribution per team. This was almost never mentioned in the prior research cycle.
 
-**Evidence (7 postings)**:
+**Evidence (12 postings including 5 new in 2026-09 window)**:
+- **DoorDash SWE, ML Infra – Gen AI** *(new 2026-09)* — LLM Gateway + cost attribution + guardrails as headline scope ([posting](https://jobs.khoslaventures.com/companies/doordash/jobs/83237566-software-engineer-machine-learning-infrastructure-gen-ai))
+- **OpenAI MLE, API Multicloud** *(new 2026-09)* — *"extending OpenAI's API platform into strategic cloud environments"* — intelligent request routing across clouds ([posting](https://jobs.ashbyhq.com/openai/5acf4854-1d42-40ca-bff8-4f6f04cdce68))
+- **Netflix Staff MLSE, Aims Platform Systems** *(new 2026-09)* — *"observability, cost, and platform subsystems that support next-generation AI workflows."* ([posting](https://www.showbizjobs.com/jobs/netflix-staff-ml-software-engineer-l6-platform-systems-aims-engineering-in-los-gatos/jid-6k7kq0))
+- **Scale AI Sr Infra SWE, Enterprise AI** *(new 2026-09)* — *"agentic observability platform…architecting multi-cloud solutions"* ([posting](https://job-boards.greenhouse.io/scaleai/jobs/4599700005))
+- **Stripe Staff SWE, ML Platform** *(new 2026-09)* — *"LLM and agent orchestration"* on the platform ([posting](https://stripe.com/careers/listing/staff-software-engineer-machine-learning-platform/7939868))
 - **Reddit Sr Staff GenAI Platform** — *"LLM Gateway design and implementation; rate/token limit management, intelligent failover."* ([posting](https://job-boards.greenhouse.io/reddit/jobs/7772274))
 - **Anthropic Cloud Inference** — *"API integration and intelligent request routing to inference execution."* ([posting](https://job-boards.greenhouse.io/anthropic/jobs/5107466008))
 - **DoorDash Principal** — *"Define the technical backbone that powers all machine learning and generative AI workloads across DoorDash."* ([posting](https://careersatdoordash.com/jobs/principal-engineer-ai-ml-platform/7669280/))
 - **Mixpanel AI Platform** — *"Build the scalable, secure, and reliable infrastructure that accelerates AI agent development."* ([posting](https://job-boards.greenhouse.io/mixpanel/jobs/7941944))
-- **Stripe** — LLM application platform support ([posting](https://stripe.com/jobs/listing/software-engineer-machine-learning-infrastructure/7528260))
+- **Stripe (2026-06)** — LLM application platform support ([posting](https://stripe.com/jobs/listing/software-engineer-machine-learning-infrastructure/7528260))
 - **Match Group** — *"Support for generative AI models on the platform"; "Mentor ML/Backend/PM partners on MLOps and GenAI tooling."* ([posting](https://jobs.lever.co/matchgroup/f6d1cdb5-efcd-4c13-bd51-570568138794))
-- **Samsara** — LLM production systems on a multi-team platform ([posting](https://job-boards.greenhouse.io/samsara/jobs/7721193))
+- **Samsara (2026-06)** — LLM production systems on a multi-team platform ([posting](https://job-boards.greenhouse.io/samsara/jobs/7721193))
 
 **Coverage**: ⚠️ **Gap** — proposed `mod-011-llm-gateway-routing` in [`.aicg/curriculum-plan-delta.json`](./.aicg/curriculum-plan-delta.json).
 
@@ -205,47 +225,73 @@ LLM Gateways are showing up as discrete platform deliverables: a routing layer i
 
 ---
 
-## Group 9: Eval Harnesses & Agent Observability — **NEW GAP**
+## Group 9: Eval Harnesses & Agent Observability + MCP + Named Agent Frameworks — **EXPANDED GAP**
 
-**Owner: This repo (Level 30)** — gap; new module proposed.
+**Owner: This repo (Level 30)** — gap; module already proposed. **Scope expanded 2026-09** to include MCP tool-call tracing and named-agent-framework support.
 
-Building evaluation harnesses for LLM-based features, curating eval datasets, designing LLM-as-judge scoring pipelines, and shipping agent observability (distributed tracing across tool calls, regression detection on offline scores) are now platform-team owned surfaces.
+Building evaluation harnesses for LLM-based features, curating eval datasets, designing LLM-as-judge scoring pipelines, and shipping agent observability (distributed tracing across tool calls, regression detection on offline scores) are now platform-team owned surfaces. **2026-09**: MCP proxy operation, MCP-based tool interoperability, and named-agent-framework fluency (LangGraph dominates; LangChain, CrewAI, AutoGen appear in kitchen-sink lists) have migrated from Agentic-AI-Engineer titles into L30 ML/AI Platform titles. Per the 2026-07 forward-guidance, these are absorbed into the same `mod-012` proposal as within-module exercises rather than triggering separate modules.
 
-> **Ownership boundary**: research-quality model evaluation belongs to applied scientists. The ML Platform Engineer builds the *platform* — the data pipeline that scores production traffic, the dashboards showing regression vs. baseline, the SDK consumers call to log a custom eval, and the gating logic that blocks promotion on red metrics.
+> **Ownership boundary**: research-quality model evaluation belongs to applied scientists. The ML Platform Engineer builds the *platform* — the data pipeline that scores production traffic, the dashboards showing regression vs. baseline, the SDK consumers call to log a custom eval, the MCP proxy that mediates tool calls, and the gating logic that blocks promotion on red metrics. Named-framework choice (LangGraph vs. LangChain vs. CrewAI) sits with application teams; the platform provides framework-agnostic observability and cost surfaces.
 
-**Evidence (5 postings)**:
+**Evidence (15 postings including 10 new in 2026-09 window)**:
+
+*Core eval + agent observability:*
+- **Netflix Staff MLSE, Aims Platform Systems** *(new 2026-09)* — *"observability, cost, and platform subsystems that support next-generation AI workflows."* ([posting](https://www.showbizjobs.com/jobs/netflix-staff-ml-software-engineer-l6-platform-systems-aims-engineering-in-los-gatos/jid-6k7kq0))
+- **Anthropic ML Infra, Safeguards Research** *(new 2026-09)* — *"Own the training, evaluation, and scoring workflows researchers use, with a focus on cutting the time between an idea and a result."* ([posting](https://job-boards.greenhouse.io/anthropic/jobs/5364804008))
+- **Scale AI Sr Infra SWE, Enterprise AI** *(new 2026-09)* — *"Agentic observability platform (logging, metrics, tracing, and analytics)."* ([posting](https://job-boards.greenhouse.io/scaleai/jobs/4599700005))
 - **Glean** — *"Design and curate evaluation datasets; build large-scale evaluation pipelines for quality measurement; develop LLM-powered scoring judges; create observability infrastructure for AI agents."* ([posting](https://job-boards.greenhouse.io/gleanwork/jobs/4669417005))
-- **Mixpanel** — *"Agent optimization and evaluation systems"; "AI-native systems built at production scale."* ([posting](https://job-boards.greenhouse.io/mixpanel/jobs/7941944))
-- **Anthropic Reward Models Platform** — *"Build the tools and infrastructure that enable researchers across the organization to develop, evaluate, and optimize reward signals."* ([posting](https://job-boards.greenhouse.io/anthropic/jobs/5024831008))
+- **Mixpanel** — *"Agent optimization and evaluation systems."* ([posting](https://job-boards.greenhouse.io/mixpanel/jobs/7941944))
+- **Anthropic Reward Models Platform** — reward-model infra for researchers ([posting](https://job-boards.greenhouse.io/anthropic/jobs/5024831008))
 - **Reddit GenAI Platform** — *"Observability and monitoring for AI systems."* ([posting](https://job-boards.greenhouse.io/reddit/jobs/7772274))
 - **DoorDash Principal** — paved-road developer experience for GenAI workloads ([posting](https://careersatdoordash.com/jobs/principal-engineer-ai-ml-platform/7669280/))
 
-**Coverage**: ⚠️ **Gap** — proposed `mod-012-eval-agent-observability` in [`.aicg/curriculum-plan-delta.json`](./.aicg/curriculum-plan-delta.json).
+*MCP / A2A protocols (newly firmed 2026-09):*
+- **DoorDash SWE, ML Infra – Gen AI** *(new 2026-09)* — *"Experience building and deploying MCP servers in production"* ([posting](https://jobs.khoslaventures.com/companies/doordash/jobs/83237566-software-engineer-machine-learning-infrastructure-gen-ai))
+- **Anthropic Staff+ SWE, Platform Connectivity** *(new 2026-09)* — *"design, build, and operate the core connectivity infrastructure behind external tool calls — the MCP proxy and the OAuth and token management systems…contribute to the MCP standard and its ecosystem."* ([posting](https://job-boards.greenhouse.io/anthropic/jobs/5394948008))
+- **Samsara Sr SWE II, AI Platform** *(new 2026-09)* — MCP-based tool interoperability, LangChain, prompt orchestration, multi-step reasoning ([posting](https://www.samsara.com/company/careers/roles/8050373))
+- **PAR Sr AI Platform Eng** *(new 2026-09)* — *"MCP-compatible tool interoperability"* + LangGraph ([posting](https://jobs.ashbyhq.com/PAR%20Technology/c951556c-5c74-460f-b9bb-6a50e2867b3e))
+- **OnePay Platform Eng, AI & Automation** *(new 2026-09)* — *"expertise with agent frameworks like LangGraph and MCP server development."* ([posting](https://jobs.ashbyhq.com/oneapp/a85bb5aa-9683-4d67-84e5-5d3e4bacda59))
+
+*Named agent frameworks (newly firmed 2026-09):*
+- **Kaseya Staff AI Platform Eng II** *(new 2026-09)* — *"agent frameworks such as LangChain, LangGraph, AutoGen, or CrewAI, and experience developing agent planning and reasoning algorithms."* ([posting](https://boards.greenhouse.io/embed/job_app?token=5589151004))
+- **Robinhood Sr SWE, AI Platform** *(new 2026-09)* — *"LLMs and agentic systems, including prompt engineering, orchestration, or RAG patterns."* ([posting](https://simplify.jobs/p/f2b88455-8635-4765-a23d-e52d79f584d4/Senior-Software-Engineer))
+
+**Coverage**: ⚠️ **Gap** — proposed `mod-012-eval-agent-observability` in [`.aicg/curriculum-plan-delta.json`](./.aicg/curriculum-plan-delta.json). **Scope note**: when scaffolded, mod-012 should include within-module exercises on MCP proxy operation, MCP tool-call tracing, and framework-agnostic evaluation/observability for LangGraph/LangChain-based agents (per absorbed requirements `req-mcp-a2a-protocols` and `req-named-agent-frameworks`). No new module is proposed for these signals per continuity bias — they remain under the ≥30% frequency bar for a standalone module at strict L30 ML-Platform titles (roughly 20–27%), and the 2026-07 forward-guidance explicitly anticipated this attachment path.
 
 **External resources** (until the module lands):
 - [OpenAI Evals](https://github.com/openai/evals)
 - [Anthropic Evals Guide](https://docs.anthropic.com/en/docs/build-with-claude/evals)
 - [LangSmith / Langfuse / Helicone](https://github.com/langfuse/langfuse)
 - [OpenTelemetry GenAI semantic conventions](https://opentelemetry.io/docs/specs/semconv/gen-ai/)
+- [Model Context Protocol specification](https://modelcontextprotocol.io/)
+- [Anthropic MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk)
+- [LangGraph documentation](https://langchain-ai.github.io/langgraph/)
 
 ---
 
-## Group 10: RAG Infrastructure & Vector Platforms — **Monitoring (not yet a gap)**
+## Group 10: RAG Infrastructure & Vector Platforms — **Monitoring (firming, not yet a gap)**
 
-**Owner: This repo (Level 30)** — emerging area; evidence not yet strong enough for a new module.
+**Owner: This repo (Level 30)** — emerging area; evidence firming but still under threshold at generalist L30 titles.
 
-Vector databases (Pinecone, Weaviate, pgvector, Qdrant), retrieval service abstractions, and chunking/embedding pipelines as platform features are mentioned but mostly described as "use these tools" rather than "build these abstractions for your platform." Three postings explicitly frame it as a platform-team deliverable.
+Vector databases (Pinecone, Weaviate, pgvector, Qdrant, Milvus, Vespa), retrieval service abstractions, and chunking/embedding pipelines as platform features. The 2026-09 window produced the first two clearly in-window platform-titled deliverable hits (Reddit Indexing & Retrieval Platform, Scale AI MLE Platform); several other postings (Stripe, Robinhood, Roblox) list RAG as one of many platform surfaces they build.
 
-**Evidence**:
+**Evidence (8 postings including 5 new in 2026-09 window)**:
+- **Reddit Sr Staff SWE, Indexing & Retrieval Platform** *(new 2026-09)* — *"Lead the technical strategy…of Reddit's next-generation ML Indexing & Retrieval engine, integrating capabilities across lexical and vector indexing, low-latency retrieval, and emerging GenAI applications. Requires expertise in Milvus, Vespa, or Elasticsearch."* ([posting](https://job-boards.greenhouse.io/reddit/jobs/7844238))
+- **Scale AI MLE, Platform** *(new 2026-09)* — *"Deep hands-on understanding of retrieval systems, RAG, embeddings, vector indexing, knowledge representation, and semantic search."* ([posting](https://job-boards.greenhouse.io/scaleai/jobs/4711544005))
+- **Scale AI Sr Infra SWE, Enterprise AI** *(new 2026-09)* — Agents + vector databases as platform substrate ([posting](https://job-boards.greenhouse.io/scaleai/jobs/4599700005))
+- **Stripe Staff SWE, ML Platform** *(new 2026-09)* — RAG named among "most challenging ML Platform problems" ([posting](https://stripe.com/careers/listing/staff-software-engineer-machine-learning-platform/7939868))
+- **Robinhood Sr SWE, AI Platform** *(new 2026-09)* — RAG patterns as platform frameworks ([posting](https://simplify.jobs/p/f2b88455-8635-4765-a23d-e52d79f584d4/Senior-Software-Engineer))
 - **Reddit GenAI Platform** — *"RAG system architecture."* ([posting](https://job-boards.greenhouse.io/reddit/jobs/7772274))
 - **Mixpanel** — AI-native infrastructure including RAG-style retrieval ([posting](https://job-boards.greenhouse.io/mixpanel/jobs/7941944))
 - **Roblox** — *"Generative AI information retrieval."* ([posting](https://careers.roblox.com/jobs/7403998))
 
-**Coverage**: 🔭 **Monitoring** — evidence is at the floor (3 postings); per the contract, evidence-thin items go in the watch list rather than triggering a new module. Re-evaluate next cycle.
+**Coverage**: 🔭 **Monitoring** — signal is firming but frequency at strict generalist L30 ML-Platform titles remains under the ≥30% bar (roughly 12–17% of sampled postings). Most explicit "build the RAG platform" postings come from search/retrieval-native companies. Re-evaluate next cycle; likely candidate for promotion to a `mod-013` proposal in 2026-12 if the trend continues.
 
 **External resources** (in the interim):
 - [Pinecone Architecture](https://docs.pinecone.io/docs/architecture)
 - [pgvector](https://github.com/pgvector/pgvector)
+- [Milvus documentation](https://milvus.io/docs)
+- [Vespa documentation](https://docs.vespa.ai/)
 - [LangChain RAG patterns](https://python.langchain.com/docs/concepts/rag/)
 
 ---
@@ -326,15 +372,15 @@ On-call rotations, runbook authoring, error budgets, blameless postmortems. This
 
 ## Proposed Curriculum Additions
 
-Three new modules and one new project are proposed for the next merge cycle, each with at least 3 cited postings. See [`.aicg/curriculum-plan-delta.json`](./.aicg/curriculum-plan-delta.json) for the full proposal.
+**Standing outstanding proposals (unchanged 2026-09)** — three new modules, one new project, and one exercise from the 2026-06 delta, each with at least 3 cited postings. This cycle emits **no new proposals**; the 2026-09 evidence reinforces all standing items and adds MCP/agent-framework scope to `mod-012` as within-module content (not a new module).
 
-| Proposed | Title | Citations | Maps to gap |
-|----------|-------|-----------|-------------|
-| `mod-010-llm-serving-platform` | LLM Serving as a Platform Runtime | 10 | `req-llm-serving-platform` |
-| `mod-011-llm-gateway-routing` | LLM Gateway, Routing & Prompt Management | 7 | `req-llm-gateway` |
-| `mod-012-eval-agent-observability` | Eval Harnesses & Agent Observability | 5 | `req-eval-harness-agent-observability` |
-| `project-06-genai-platform` | GenAI Platform: Gateway + Eval Harness + Serving | 8 | All three gaps above |
-| `mod-005 exercise: KubeRay` | KubeRay self-service for platform users | 3 | `req-ray-on-kubernetes` |
+| Proposed | Title | Citations (2026-09 refreshed) | Maps to gap |
+|----------|-------|-------------------------------|-------------|
+| `mod-010-llm-serving-platform` | LLM Serving as a Platform Runtime | 17 | `req-llm-serving-platform` |
+| `mod-011-llm-gateway-routing` | LLM Gateway, Routing & Prompt Management | 12 | `req-llm-gateway` |
+| `mod-012-eval-agent-observability` | Eval Harnesses, Agent Observability, MCP & Agent-Framework Support | 15 | `req-eval-harness-agent-observability` + absorbed `req-mcp-a2a-protocols` + absorbed `req-named-agent-frameworks` |
+| `project-06-genai-platform` | GenAI Platform: Gateway + Eval Harness + Serving | 15+ | All three gaps above |
+| `mod-005 exercise: KubeRay` | KubeRay self-service for platform users | 5 | `req-ray-on-kubernetes` |
 
 The deltas are **strictly additive** and will not auto-merge — they go through human review with per-run caps applied by the runner.
 
@@ -342,15 +388,15 @@ The deltas are **strictly additive** and will not auto-merge — they go through
 
 ## Watch List (Re-evaluate Next Cycle)
 
-These signals are present but evidence remains too thin for new modules under the current contract:
+These signals are present but evidence remains too thin (or too concentrated at niche employers) for new modules under the current contract:
 
-- **RAG infrastructure as platform deliverable** — 3 postings; expect this to firm up.
-- **Research-facing data platform / experiment metadata** — concentrated at AI labs.
-- **Edge / on-device ML platform support** — Samsara explicitly, but otherwise rare at the L30 ML Platform role.
-- **Voice/streaming AI infra** — Together AI, Cartesia, Deepgram — niche but growing.
-- **MCP / A2A protocols as platform surface** *(new 2026-07)* — Model Context Protocol shows up strongly in *Agentic AI Engineer* postings (GoFundMe explicit) and as a vendor feature (Greenhouse MCP launched 2026-05-07). Not yet a headline requirement at L30 ML Platform titles. If this migrates from Agentic-AI titles into ML-Platform titles by the next cycle, expect it to land under the existing eval/agent observability gap (`mod-012` proposal) rather than as its own module.
-- **Named agent-framework fluency** *(new 2026-07)* — LangGraph, CrewAI, AutoGen, Pydantic AI, Google ADK are now called out by name in Agentic AI postings (GoFundMe explicit). Concentrated in application-engineer titles; adjacent to but not yet inside the L30 ML Platform surface.
+- **RAG infrastructure as platform deliverable** *(firming 2026-09)* — 8 postings across cycles; 5 new hits in the 2026-09 window (Reddit Indexing & Retrieval, Scale AI Platform, Scale AI Enterprise, Stripe, Robinhood). Frequency at strict generalist L30 titles still ~12–17% — under the ≥30% bar. Likely `mod-013` candidate in the 2026-12 cycle if the trend continues.
+- **Voice/streaming AI infra** *(firming 2026-09 at voice-native cos)* — Together AI Sr Platform Eng Voice AI, Cartesia SWE Platform, Deepgram MLOps Infra all in-window. Signal is broadening beyond original flags but remains concentrated at voice-specialized companies (Together, Cartesia, Deepgram, ElevenLabs). Frequency at generalist L30 titles <10%. Much of the WebSocket / bidirectional-streaming skill is general backend engineering; not clearly a new *ML platform* module.
+- **Edge / on-device ML platform support** — Samsara's Lead MLE ML Infrastructure (2026-09) reinforces the same single-employer concentration seen in the 2026-06 cycle. Still one employer.
+- **Research-facing data platform / experiment metadata** — Anthropic (3 postings across cycles) remains the primary source; concentrated at AI labs.
+- **MCP / A2A protocols as platform surface** *(firmed 2026-09 — MOVED OUT OF WATCH LIST)* — see [Group 9](#group-9-eval-harnesses--agent-observability--mcp--named-agent-frameworks--expanded-gap). Signal migrated into L30 platform titles at DoorDash, Anthropic, Samsara, PAR, OnePay. Absorbed by `mod-012` proposal per 2026-07 forward-guidance.
+- **Named agent-framework fluency (LangGraph, LangChain, CrewAI, AutoGen)** *(firmed 2026-09 — MOVED OUT OF WATCH LIST)* — see [Group 9](#group-9-eval-harnesses--agent-observability--mcp--named-agent-frameworks--expanded-gap). LangGraph dominates; kitchen-sink lists (Kaseya) name all four. Absorbed by `mod-012` proposal.
 
 ---
 
-*Last updated: 2026-07-04. Next refresh: see [`.aicg/research/runs/ml-platform/research-run.env`](./.aicg/research/runs/ml-platform/research-run.env).*
+*Last updated: 2026-10-04. Next refresh: see [`.aicg/research/runs/ml-platform/research-run.env`](./.aicg/research/runs/ml-platform/research-run.env).*
