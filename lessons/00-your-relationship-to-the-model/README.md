@@ -39,15 +39,15 @@ Each row is a sibling org: what you hand them, what they hand you, and the role 
 | Org | You hand them | They hand you | Your nearest counterpart |
 |-----|---------------|---------------|--------------------------|
 | AI Startup | Unit economics: what each request, user, or customer costs to serve, and how that changes with scale | Growth forecasts, cost targets, and reliability commitments that set the platform's budget | [Co-Founder / CTO](https://github.com/ai-startup-curriculum/cto-curriculum) |
-| AI Governance | Audit logs, access controls, data-residency guarantees, and evidence that controls actually run in production | Control requirements (logging, access, retention, residency) and the evidence they need to produce | [AI Risk Engineer](https://github.com/ai-governance-curriculum/ai-risk-engineer-learning) |
+| AI Governance | Audit logs, access controls, data-residency guarantees, and evidence that controls actually run in production | Control requirements (logging, access, retention, residency) and the evidence they need to produce | [AI Privacy Engineer](https://github.com/ai-governance-curriculum/ai-privacy-engineer-learning) |
 | AI Engineering | Serving endpoints with known latency, throughput, rate limits, and cost per call, plus the telemetry to debug them | Traffic shapes, latency budgets, and model-mix requirements, so capacity and routing match how the product actually calls models | [AI Evaluation Engineer](https://github.com/ai-engineering-curriculum/ai-eval-engineer-learning) |
-| ML Engineering | Training and fine-tuning clusters, experiment and artifact storage, and a path to production for the models they produce | Model artifacts with known resource profiles (memory, throughput, precision) and the training workloads they need to schedule | [Fine-Tuning Engineer](https://github.com/ml-engineering-curriculum/fine-tuning-engineer-learning) |
+| ML Engineering | Training and fine-tuning clusters, experiment and artifact storage, and a path to production for the models they produce | Model artifacts with known resource profiles (memory, throughput, precision) and the training workloads they need to schedule | [AI Data Engineer](https://github.com/ml-engineering-curriculum/ai-data-engineer-learning) |
 
 ## Your ladder
 
 - **Before this role:** [AI Infrastructure Engineer](https://github.com/AI-Infra-Curriculum/ai-infra-engineer-learning)
 - **Alongside it (same level):** [MLOps Engineer](https://github.com/AI-Infra-Curriculum/ai-infra-mlops-learning), [Senior AI Infrastructure Engineer](https://github.com/AI-Infra-Curriculum/ai-infra-senior-engineer-learning)
-- **After this role:** [AI Inference Engineer](https://github.com/AI-Infra-Curriculum/ai-infra-inference-engineer-learning), [AI Infrastructure Performance Engineer](https://github.com/AI-Infra-Curriculum/ai-infra-performance-learning)
+- **After this role:** [AI Inference Engineer](https://github.com/AI-Infra-Curriculum/ai-infra-inference-engineer-learning), [AI Infrastructure Performance Engineer](https://github.com/AI-Infra-Curriculum/ai-infra-performance-learning), [AI Reliability Engineer (AI SRE)](https://github.com/AI-Infra-Curriculum/ai-infra-sre-learning)
 
 ## Scenario: One model upgrade, five orgs
 
