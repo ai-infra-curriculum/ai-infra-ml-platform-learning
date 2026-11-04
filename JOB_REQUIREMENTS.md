@@ -1,9 +1,9 @@
 # Job Requirements — AI/ML Platform Engineer
 
 > **Role**: AI/ML Platform Engineer (Level 30)
-> **Research window**: 2026-07-06 → 2026-10-04 (last 90 days)
-> **Postings analyzed**: 59 distinct postings across 36 employers (1 new posting added this cycle; 2026-10 was a mid-cycle refresh one month after the comprehensive 2026-09 scan)
-> **Last refreshed**: 2026-10-04
+> **Research window**: 2026-08-05 → 2026-11-04 (last 90 days)
+> **Postings analyzed**: 62 distinct postings across 35 employers (3 new postings added this cycle; 2026-11 was another mid-cycle refresh two months after the comprehensive 2026-09 scan)
+> **Last refreshed**: 2026-11-04
 
 This document captures the recurring requirements observed in current job postings for the **AI/ML Platform Engineer** role, maps them to learning coverage in this repository, and links out to lower-level repositories when a requirement is genuinely owned elsewhere in the role hierarchy.
 
@@ -14,6 +14,8 @@ For raw, machine-readable findings (postings, requirements, evidence, coverage p
 ---
 
 ## Summary of the 2026 Shift
+
+**2026-11 mid-cycle refresh note**: A targeted spot-check of the 2026-10-05 → 2026-11-04 window (two months after the comprehensive 2026-09 scan) surfaces no material shift. The three standing GenAI-platform gaps (LLM serving runtime integration, LLM Gateway & routing, eval harnesses + agent observability + absorbed MCP/named-agent-framework scope) remain the correct outstanding story and the standing 2026-06 proposal set (`mod-010`, `mod-011`, `mod-012`, `project-06`, `mod-005` KubeRay exercise) remains the correct fix. Three new in-window postings verified this cycle: **DoorDash SWE ML Platform Gen AI** (p060, 2026-10-08) — a rare triple-hit JD citing vLLM/SGLang/TensorRT-LLM, LLM Gateway + Agent Gateway + evals infrastructure + guardrails + cost attribution, and fine-tuning (SFT/DPO/LoRA) together as headline responsibilities; **DoorDash SWE Data and AI Platform** (p061, 2026-10-14) — MCP + skills layer + agent frameworks + tool-calling architectures; **Netflix Staff/Principal SWE L6/L7, AI Platform Model Serving** (p062, 2026-10-27) — unified serving layer spanning in-house inference, third-party model hosting, and external LLM providers with cross-provider routing and A/B experimentation. Two faint new sub-signals appeared — an **Agent Gateway** surface distinct from LLM Gateway, and **per-tenant GenAI cost attribution** — but both are single-employer (DoorDash) and best absorbed into the standing `mod-011` scope rather than opening new requirements. The **fine-tuning platform / LoRA-adapter-serving** sub-trend firms slightly (DoorDash p060 now explicitly names SFT/DPO/LoRA alongside serving) but still single-digit employer coverage at strict L30 ML-Platform titles — stays on Watch List, absorbed by `mod-010` scope when scaffolded. Voice/streaming inference and RAG-as-platform remain on the Watch List (unchanged). **Empty delta this cycle.** See [`.aicg/curriculum-plan-delta.json`](./.aicg/curriculum-plan-delta.json).
 
 **2026-10 mid-cycle refresh note**: A targeted spot-check of the 2026-09-05 → 2026-10-04 window (one month after the comprehensive 2026-09 scan) surfaces no material shift. The three standing GenAI-platform gaps (LLM serving runtime integration, LLM Gateway & routing, eval harnesses + agent observability + absorbed MCP/named-agent-framework scope) remain the correct outstanding story and the standing 2026-06 proposal set (`mod-010`, `mod-011`, `mod-012`, `project-06`, `mod-005` KubeRay exercise) remains the correct fix. One new in-window posting verified this cycle — **Faire Sr Staff ML Platform Engineer** (p059) — reinforces classical ML Platform coverage (Databricks lakehouse, Spark, MLflow, Kubernetes, IaC) with LLM workflow integration mentioned but not as a dedicated LLM-serving/gateway surface. External posting-listings (EXL "Hybrid AI Platform Engineer - LLM Gateway & Observability", ALTCloud "AI Platform Engineer – MCP / Model Gateway / GenAI", Synopsys "AI Platform Engineer (MCP, Python/GO, LLM)") corroborate the standing gateway + MCP picture at non-headline-brand employers but add no new signal class. A **fine-tuning platform / LoRA-adapter-serving** sub-trend (Predibase/LoRAX, Fireworks, Together AI) is firming in external discourse but at strict generalist L30 ML-Platform titles still folds into existing serving/registry surfaces (Stripe p046 names LLM fine-tuning as one of many platform surfaces) — not clearing the ≥30% bar for a standalone module; absorbed by `mod-010` scope when scaffolded. **Empty delta this cycle.** See [`.aicg/curriculum-plan-delta.json`](./.aicg/curriculum-plan-delta.json).
 
@@ -74,6 +76,7 @@ Multi-tenant platform design, paved-road abstractions, build-vs-buy decisions, A
 - **DoorDash Principal** — *"Define the technical backbone that powers all machine learning and generative AI workloads across DoorDash."* ([posting](https://careersatdoordash.com/jobs/principal-engineer-ai-ml-platform/7669280/))
 - **Samsara** — *"Design, build, and operate Samsara's end-to-end ML platform (training, experimentation, batch/online inference, edge)."* ([posting](https://job-boards.greenhouse.io/samsara/jobs/7721193))
 - **Faire Sr Staff ML Platform Engineer** *(new 2026-10)* — *"Own the technical vision and evolution of the ML platform; set standards and influence org-wide architecture; lead complex cross-functional initiatives."* ([posting](https://job-boards.greenhouse.io/faire/jobs/8731172002))
+- **Netflix Staff/Principal SWE (L6/L7), AI Platform Model Serving** *(new 2026-11)* — *"Re-building a new model serving platform from the ground up that unifies in-house inference infrastructure, third-party model hosting, and external LLM providers."* ([posting](https://explore.jobs.netflix.net/careers/job/790316811164))
 
 **Coverage**: [Module 01 — Platform Fundamentals](./lessons/mod-001-platform-fundamentals/) and [Project 01 — Platform Core](./projects/project-01-platform-core/) cover this fully.
 
@@ -166,7 +169,9 @@ This is the largest 2026 shift. LLM serving engines (vLLM, SGLang, TensorRT-LLM,
 
 > **Ownership boundary**: kernel-level CUDA optimization, attention math, and inference engine internals belong to the [AI Infrastructure Performance Engineer](https://github.com/ai-infra-curriculum/ai-infra-performance-learning) (Level 35). The ML Platform Engineer integrates these engines *as platform consumers* — choosing serving runtimes, autoscaling them, exposing them via SDK abstractions, and managing capacity. The new module proposal sticks to that boundary.
 
-**Evidence (17 postings including 6 new in 2026-09 window)**:
+**Evidence (19 postings including 2 new in 2026-11 window)**:
+- **DoorDash SWE, ML Platform — Gen AI** *(new 2026-11)* — *"Experience with LLM inference engines and serving frameworks (e.g., vLLM, SGLang, TensorRT-LLM) in production."* ([posting](https://job-boards.greenhouse.io/doordashusa/jobs/8264542))
+- **Netflix Staff/Principal SWE (L6/L7), AI Platform Model Serving** *(new 2026-11)* — *"Re-building a new model serving platform from the ground up that unifies in-house inference infrastructure, third-party model hosting, and external LLM providers under a single serving, routing, and experimentation layer."* ([posting](https://explore.jobs.netflix.net/careers/job/790316811164))
 - **Red Hat** — *"Tackle challenges in scalable inference systems and Kubernetes-native deployments via vLLM and LLM-D."* ([posting](https://redhat.wd5.myworkdayjobs.com/en-US/Jobs/job/Principal-Machine-Learning-Engineer--Distributed-vLLM-Inference_R-050962-1))
 - **Together AI Sr Backend Eng, Inference Platform** *(new 2026-09)* — *"Open source inference ecosystem: SGLang, vLLM, or NVIDIA Dynamo (highly valuable)."* ([posting](https://job-boards.greenhouse.io/togetherai/jobs/4835763007))
 - **Together AI Staff SWE, Inference/Compute Infra** *(new 2026-09)* — manifest-driven inference API via Kubernetes controllers ([posting](https://job-boards.greenhouse.io/togetherai/jobs/5186628007))
@@ -202,7 +207,9 @@ This is the largest 2026 shift. LLM serving engines (vLLM, SGLang, TensorRT-LLM,
 
 LLM Gateways are showing up as discrete platform deliverables: a routing layer in front of one or many model providers (internal serving fleets + external APIs) that handles token/rate limits, intelligent failover, prompt/version management, response caching, and cost attribution per team. This was almost never mentioned in the prior research cycle.
 
-**Evidence (12 postings including 5 new in 2026-09 window)**:
+**Evidence (14 postings including 2 new in 2026-11 window)**:
+- **DoorDash SWE, ML Platform — Gen AI** *(new 2026-11)* — *"Work on our open-weights serving stack… alongside the LLM Gateway, Agent Gateway, evals infrastructure, guardrails, and cost attribution."* ([posting](https://job-boards.greenhouse.io/doordashusa/jobs/8264542))
+- **Netflix Staff/Principal SWE (L6/L7), AI Platform Model Serving** *(new 2026-11)* — unified serving + routing + experimentation layer where teams can deploy, route, and A/B test any model ([posting](https://explore.jobs.netflix.net/careers/job/790316811164))
 - **DoorDash SWE, ML Infra – Gen AI** *(new 2026-09)* — LLM Gateway + cost attribution + guardrails as headline scope ([posting](https://jobs.khoslaventures.com/companies/doordash/jobs/83237566-software-engineer-machine-learning-infrastructure-gen-ai))
 - **OpenAI MLE, API Multicloud** *(new 2026-09)* — *"extending OpenAI's API platform into strategic cloud environments"* — intelligent request routing across clouds ([posting](https://jobs.ashbyhq.com/openai/5acf4854-1d42-40ca-bff8-4f6f04cdce68))
 - **Netflix Staff MLSE, Aims Platform Systems** *(new 2026-09)* — *"observability, cost, and platform subsystems that support next-generation AI workflows."* ([posting](https://www.showbizjobs.com/jobs/netflix-staff-ml-software-engineer-l6-platform-systems-aims-engineering-in-los-gatos/jid-6k7kq0))
@@ -233,9 +240,11 @@ Building evaluation harnesses for LLM-based features, curating eval datasets, de
 
 > **Ownership boundary**: research-quality model evaluation belongs to applied scientists. The ML Platform Engineer builds the *platform* — the data pipeline that scores production traffic, the dashboards showing regression vs. baseline, the SDK consumers call to log a custom eval, the MCP proxy that mediates tool calls, and the gating logic that blocks promotion on red metrics. Named-framework choice (LangGraph vs. LangChain vs. CrewAI) sits with application teams; the platform provides framework-agnostic observability and cost surfaces.
 
-**Evidence (15 postings including 10 new in 2026-09 window)**:
+**Evidence (17 postings including 2 new in 2026-11 window)**:
 
 *Core eval + agent observability:*
+- **DoorDash SWE, ML Platform — Gen AI** *(new 2026-11)* — *"LLM Gateway, Agent Gateway, evals infrastructure, guardrails, and cost attribution"* as headline scope ([posting](https://job-boards.greenhouse.io/doordashusa/jobs/8264542))
+- **DoorDash SWE, Data and AI Platform** *(new 2026-11)* — *"Semantic and Knowledge layer along with MCP and skills layer plus the full stack infrastructure"*; *"Experience with MCP, agent frameworks, or tool-calling architectures in production."* ([posting](https://job-boards.greenhouse.io/doordashusa/jobs/8192187))
 - **Netflix Staff MLSE, Aims Platform Systems** *(new 2026-09)* — *"observability, cost, and platform subsystems that support next-generation AI workflows."* ([posting](https://www.showbizjobs.com/jobs/netflix-staff-ml-software-engineer-l6-platform-systems-aims-engineering-in-los-gatos/jid-6k7kq0))
 - **Anthropic ML Infra, Safeguards Research** *(new 2026-09)* — *"Own the training, evaluation, and scoring workflows researchers use, with a focus on cutting the time between an idea and a result."* ([posting](https://job-boards.greenhouse.io/anthropic/jobs/5364804008))
 - **Scale AI Sr Infra SWE, Enterprise AI** *(new 2026-09)* — *"Agentic observability platform (logging, metrics, tracing, and analytics)."* ([posting](https://job-boards.greenhouse.io/scaleai/jobs/4599700005))
@@ -372,14 +381,14 @@ On-call rotations, runbook authoring, error budgets, blameless postmortems. This
 
 ## Proposed Curriculum Additions
 
-**Standing outstanding proposals (unchanged 2026-09)** — three new modules, one new project, and one exercise from the 2026-06 delta, each with at least 3 cited postings. This cycle emits **no new proposals**; the 2026-09 evidence reinforces all standing items and adds MCP/agent-framework scope to `mod-012` as within-module content (not a new module).
+**Standing outstanding proposals (unchanged 2026-11)** — three new modules, one new project, and one exercise from the 2026-06 delta, each with at least 3 cited postings. This cycle emits **no new proposals**; the 2026-11 evidence reinforces all standing items (DoorDash p060 is a rare triple-hit JD on all three gaps; Netflix p062 reinforces serving + gateway; DoorDash p061 reinforces absorbed MCP scope in `mod-012`).
 
-| Proposed | Title | Citations (2026-09 refreshed) | Maps to gap |
+| Proposed | Title | Citations (2026-11 refreshed) | Maps to gap |
 |----------|-------|-------------------------------|-------------|
-| `mod-010-llm-serving-platform` | LLM Serving as a Platform Runtime | 17 | `req-llm-serving-platform` |
-| `mod-011-llm-gateway-routing` | LLM Gateway, Routing & Prompt Management | 12 | `req-llm-gateway` |
-| `mod-012-eval-agent-observability` | Eval Harnesses, Agent Observability, MCP & Agent-Framework Support | 15 | `req-eval-harness-agent-observability` + absorbed `req-mcp-a2a-protocols` + absorbed `req-named-agent-frameworks` |
-| `project-06-genai-platform` | GenAI Platform: Gateway + Eval Harness + Serving | 15+ | All three gaps above |
+| `mod-010-llm-serving-platform` | LLM Serving as a Platform Runtime | 19 | `req-llm-serving-platform` |
+| `mod-011-llm-gateway-routing` | LLM Gateway, Routing & Prompt Management | 14 | `req-llm-gateway` |
+| `mod-012-eval-agent-observability` | Eval Harnesses, Agent Observability, MCP & Agent-Framework Support | 17 | `req-eval-harness-agent-observability` + absorbed `req-mcp-a2a-protocols` + absorbed `req-named-agent-frameworks` |
+| `project-06-genai-platform` | GenAI Platform: Gateway + Eval Harness + Serving | 17+ | All three gaps above |
 | `mod-005 exercise: KubeRay` | KubeRay self-service for platform users | 5 | `req-ray-on-kubernetes` |
 
 The deltas are **strictly additive** and will not auto-merge — they go through human review with per-run caps applied by the runner.
@@ -390,6 +399,8 @@ The deltas are **strictly additive** and will not auto-merge — they go through
 
 These signals are present but evidence remains too thin (or too concentrated at niche employers) for new modules under the current contract:
 
+- **Fine-tuning platform / LoRA-adapter-serving** *(firming 2026-11 at single employer)* — DoorDash SWE ML Platform Gen AI (p060) explicitly names SFT/DPO/LoRA alongside serving as headline platform scope; external vendor discourse (Predibase/LoRAX, Fireworks, Together AI, Anyscale) continues to firm. Still single-digit employer coverage at strict L30 ML-Platform titles — remains under the ≥30% bar for a standalone module. Expected to be absorbed by `mod-010` scope when scaffolded.
+- **Agent Gateway / per-tenant GenAI cost attribution** *(new 2026-11 — single employer)* — DoorDash p060 names "Agent Gateway" as distinct from "LLM Gateway" and names per-agent/per-tenant cost attribution as a deliverable. Single-employer so far; absorbed into standing `mod-011` scope rather than broken out. Revisit next cycle if a second employer picks it up.
 - **RAG infrastructure as platform deliverable** *(firming 2026-09)* — 8 postings across cycles; 5 new hits in the 2026-09 window (Reddit Indexing & Retrieval, Scale AI Platform, Scale AI Enterprise, Stripe, Robinhood). Frequency at strict generalist L30 titles still ~12–17% — under the ≥30% bar. Likely `mod-013` candidate in the 2026-12 cycle if the trend continues.
 - **Voice/streaming AI infra** *(firming 2026-09 at voice-native cos)* — Together AI Sr Platform Eng Voice AI, Cartesia SWE Platform, Deepgram MLOps Infra all in-window. Signal is broadening beyond original flags but remains concentrated at voice-specialized companies (Together, Cartesia, Deepgram, ElevenLabs). Frequency at generalist L30 titles <10%. Much of the WebSocket / bidirectional-streaming skill is general backend engineering; not clearly a new *ML platform* module.
 - **Edge / on-device ML platform support** — Samsara's Lead MLE ML Infrastructure (2026-09) reinforces the same single-employer concentration seen in the 2026-06 cycle. Still one employer.
@@ -399,4 +410,4 @@ These signals are present but evidence remains too thin (or too concentrated at 
 
 ---
 
-*Last updated: 2026-10-04. Next refresh: see [`.aicg/research/runs/ml-platform/research-run.env`](./.aicg/research/runs/ml-platform/research-run.env).*
+*Last updated: 2026-11-04. Next refresh: see [`.aicg/research/runs/ml-platform/research-run.env`](./.aicg/research/runs/ml-platform/research-run.env).*
